@@ -13,6 +13,9 @@ export class TestView {
 
 			// Reveal the child which will load the parent
 			this.promiseQueue = this.promiseQueue.then(async () => view.reveal({ key: "aa" }, { focus: true, select: false }));
+
+			// refresh the parent
+			provider.refresh();
 			return this.promiseQueue;
 		});
 	}
